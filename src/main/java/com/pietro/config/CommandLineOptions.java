@@ -15,6 +15,9 @@ public class CommandLineOptions {
     @Parameter(names = { "-log", "-verbose" }, description = "Level of verbosity")
     public Integer verbose = 1;
 
+    @Parameter(names = { "--help" }, description = "Show command line options")
+    public boolean showHelp;
+    
     /**
      * Invoked by SpringBootConsoleApplication. If false is returned, the app shows the usage and quits.
      * @return

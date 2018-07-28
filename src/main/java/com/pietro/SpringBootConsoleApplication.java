@@ -27,8 +27,6 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
         SpringApplication app = new SpringApplication(SpringBootConsoleApplication.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
-
-        //SpringApplication.run(SpringBootConsoleApplication.class, args);
     }
 
     @Override
@@ -37,7 +35,7 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
         JCommander jCommander = new JCommander(options);
         jCommander.parse(args);
         
-        if (!options.validate()) {
+        if (!options.validate() || options.showHelp) {
             jCommander.usage();
             System.exit(1);            
         }
